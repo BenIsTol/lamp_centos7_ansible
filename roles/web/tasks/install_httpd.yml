@@ -1,10 +1,11 @@
 ---
-# These tasks install http and the php modules.
+# These tasks install http and git modules.
 
 - name: Install http etc
   yum: name={{ item }} state=present
   with_items:
    - httpd
+   - php
    - git
    - libsemanage-python
    - libselinux-python

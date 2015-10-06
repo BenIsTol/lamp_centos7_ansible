@@ -4,16 +4,16 @@
 - name: Enable firewalld service
   service:  name=firewalld state=started enabled=yes
 
-- name: upgrade all packages
+- name: Upgrade all packages
   yum: name=* state=latest
 
 - name: Set SELinux to enforcing
   selinux: policy=targeted state=enforcing
   register: result
 
-- name: Reboot system due to SELinux
+- name: Reboot system due to SELinux change
   raw: /sbin/shutdown -r
 
-- name: Wait for system to reboot (5 min max / 90 sec delay)
+- name: Wait for system to reboot (max 5 minutes / 90 sec delay)
   wait_for: host={{ ansible_default_ipv4.address }} port=22 timeout={{ 5 * 60 }} delay=90 state=started
   delegate_to: 127.0.0.1
