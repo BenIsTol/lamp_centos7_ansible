@@ -26,7 +26,9 @@ If you do __not__ have ssh-keys setup then you can do something like this.
 
 If you do not have your ssh-keys setup then you might need to install
 sshpass.
-```yum install sshpass
+
+```
+yum install sshpass
 ```
 
 This playbook is my first one I will get better!
