@@ -1,0 +1,4 @@
+---
+#Handler for ntp havent finished yet
+#- name: restart ntp
+#  service: name=ntpd state=restarted
